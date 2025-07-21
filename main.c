@@ -446,8 +446,8 @@ int dijkstra(int mask,char fast_check){
 				#if 1
 				//南東方向にノードを拡張をする
 				tmpcnt=2;
-				while( (tmpcnt%2==0 && (wall[vx+((tmpcnt+1)/2)][vy-((tmpcnt+1)/2)].east & mask) == NOWALL && COST[vx+(tmpcnt/2)][vy-(tmpcnt/2)][1] > COST[vx][vy][0] + ex_diagonalt[tmpcnt] ) ||
-					   (tmpcnt%2==1 && wall[vx+((tmpcnt+1)/2)][vy-((tmpcnt+1)/2)].north == NOWALL && COST[vx+(tmpcnt/2)][vy-(tmpcnt/2)][0] > COST[vx][vy][0] + ex_diagonalt[tmpcnt] ) ){ 
+				while( (tmpcnt%2==0 && (wall[vx+((tmpcnt+1)/2)][vy-((tmpcnt+1)/2)].east & mask) == NOWALL && COST[vx+(tmpcnt+1/2)][vy-(tmpcnt+1/2)][1] > COST[vx][vy][0] + ex_diagonalt[tmpcnt] ) ||
+					   (tmpcnt%2==1 && wall[vx+((tmpcnt+1)/2)][vy-((tmpcnt+1)/2)].north == NOWALL && COST[vx+(tmpcnt+1/2)][vy-(tmpcnt+1/2)][0] > COST[vx][vy][0] + ex_diagonalt[tmpcnt] ) ){ 
 						if(tmpcnt%2==0){
 							COST[vx+((tmpcnt+1)/2)][vy-((tmpcnt+1)/2)][1] = COST[vx][vy][0] + ex_diagonalt[tmpcnt];
 							//printf("南東にもっと行ける %d \n",COST[vx+((tmpcnt+1)/2)][vy-((tmpcnt+1)2)][1]);
